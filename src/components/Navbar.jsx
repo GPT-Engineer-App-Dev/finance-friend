@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { Box, Flex, Heading, Spacer, Link, Button } from "@chakra-ui/react";
 
-const Navbar = () => {
+const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
   return (
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="teal.500" color="white">
       <Flex align="center" mr={5}>
@@ -10,7 +11,20 @@ const Navbar = () => {
         </Heading>
       </Flex>
       <Spacer />
-      {}
+      <Box>
+        {isAuthenticated ? (
+          <Button onClick={() => setIsAuthenticated(false)}>Logout</Button>
+        ) : (
+          <>
+            <Link as={RouterLink} to="/login" mr={4}>
+              Login
+            </Link>
+            <Link as={RouterLink} to="/register">
+              Register
+            </Link>
+          </>
+        )}
+      </Box>
     </Flex>
   );
 };
