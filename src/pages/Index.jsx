@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Heading, Input, Select, Button, Table, Thead, Tbody, Tr, Th, Td, Flex, Spacer, Text } from "@chakra-ui/react";
 import { FaPlus, FaEdit, FaTrash, FaFilter, FaFileExport } from "react-icons/fa";
 
+
 const categories = ["Groceries", "Bills", "Salary", "Entertainment", "Transportation"];
 
 const Index = () => {
